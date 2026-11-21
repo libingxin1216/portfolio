@@ -4996,7 +4996,7 @@ $("#saveBtn").addEventListener("click", () => {
   clone.querySelectorAll("[contenteditable]").forEach(n => n.removeAttribute("contenteditable"));
   const bodyEl = clone.querySelector("body"); if (bodyEl) bodyEl.className = "";
   const eb = clone.querySelector("#editBtn"); if (eb) eb.textContent = "编辑";
-  clone.querySelector("#toolbar") && clone.querySelector("#toolbar").remove();
+  /* 保留 #toolbar（默认隐藏），否则重新打开的页面里保存/退出按钮绑不上事件而白屏 */
   const html = "<!DOCTYPE html>\n" + clone.outerHTML;
   const blob = new Blob([html], { type: "text/html;charset=utf-8" });
   const a = document.createElement("a");
