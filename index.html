@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
+<html lang="zh-CN"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>李冰欣 · 游戏策划作品集</title>
 <link rel="preconnect" href="https://miaoda.feishu.cn">
-<link href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#FCFBF6; --card:#FFFFFF; --mint:#EEF5EF; --mint2:#E2EFE5;
@@ -209,8 +208,8 @@ body.editing .editing-tip{display:block}
 }
 </style>
 </head>
-<body>
-<div class="progress" id="progress"></div>
+<body class="">
+<div class="progress" id="progress" style="width: 0px;"></div>
 <header class="bar">
   <div class="bar-in">
     <div class="brand"><b>李冰欣</b><span>Game Design Portfolio</span></div>
@@ -242,23 +241,12 @@ body.editing .editing-tip{display:block}
 </footer>
 
 <div class="editing-tip" id="tip">编辑中 · 改完记得保存并下载</div>
-<div class="toolbar" id="toolbar">
-  <button data-add="p">＋ 段落</button>
-  <button data-add="h3">＋ 小标题</button>
-  <button data-add="ul">＋ 列表</button>
-  <button data-add="img">＋ 图片</button>
-  <button data-add="video">＋ 视频</button>
-  <button data-add="quote">＋ 引言</button>
-  <button class="save" id="saveBtn">保存并下载</button>
-  <button id="resetBtn">还原原始</button>
-  <button id="exitBtn">退出编辑</button>
-</div>
+
 <input type="file" class="imgpick" id="imgpick" accept="image/*">
 <input type="file" class="imgpick" id="vidpick" accept="video/*">
 
-<script id="data">
-const META = {
- "intro": "中国传媒大学数字媒体技术（智能交互与游戏技术方向）在读，方向是系统策划与数值策划。这里收了竞品系统拆解——把别人的规则拆成表，和自己的原创文档与项目——把想法写到程序和美术能直接执行的程度。每份文档都可以直接在网页里读完。",
+<script id="data">const META = {
+ "intro": "中国传媒大学数字媒体技术（智能交互与游戏技术方向）在读，方向是系统策划。这里收了竞品系统拆解——把别人的规则拆成表，和自己的原创文档与项目——把想法写到程序和美术能直接执行的程度。每份文档都可以直接在网页里读完。",
  "city": "北京 · 中国传媒大学",
  "school": "中国传媒大学 数字媒体技术（智能交互与游戏技术方向）",
  "year": "2028 届（2028.6 毕业）",
@@ -4566,8 +4554,7 @@ const DOCS = [
    }
   ]
  }
-];
-</script>
+];</script>
 <script>
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
@@ -5039,5 +5026,6 @@ document.addEventListener("input", e => {
   go();
 })();
 </script>
-</body>
-</html>
+
+
+</body></html>
