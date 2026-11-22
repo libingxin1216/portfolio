@@ -220,6 +220,20 @@ body.editing .editing-tip{display:block}
 @keyframes am{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 .am-box p{margin:6px 0 0;font-size:12.5px;letter-spacing:.08em;color:var(--sub,#7C887F)}
 #article.ld{opacity:0}
+
+/* 首页：文字 + 项目混剪 */
+.herogrid{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:58px;align-items:center}
+.heroside{display:flex;flex-direction:column;gap:12px}
+.herocard{position:relative;border-radius:14px;overflow:hidden;background:#0F1512;
+  border:1px solid rgba(58,74,65,.16);box-shadow:0 24px 52px rgba(52,74,62,.17);aspect-ratio:16/9}
+.herocard video{width:100%;height:100%;object-fit:cover;display:block}
+.heronote{font-size:11px;letter-spacing:.06em;color:var(--sub);text-align:right}
+@media(max-width:1040px){
+  .herogrid{grid-template-columns:1fr;gap:36px}
+  .herocard{max-width:560px}
+  .heronote{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){.herocard video{display:none}}
 </style>
 </head>
 <body class="">
@@ -4673,7 +4687,10 @@ function homeHTML() {
       <div class="toc-pg"><b>P${d.first}–${d.last}</b>${d.pages} 页</div>
     </a>`).join("");
   return `
-  <section class="home"><div class="wrap">
+  <section class="home">
+    <div class="wrap">
+    <div class="herogrid">
+    <div class="herotxt">
     <div class="eyebrow">Game Design Portfolio · ${esc(META.year)}</div>
     <h1>把一天的经营，<br>拆成<em>一整套规则</em>。</h1>
     <p class="lead" id="introText" data-edit="intro">${esc(META.intro)}</p>
@@ -4681,6 +4698,14 @@ function homeHTML() {
     <div class="cta">
       <a class="btn" href="#/toc">进入目录</a>
       <a class="btn coral" href="${META.taptap}" target="_blank" rel="noopener">试玩 Demo</a>
+    </div>
+    </div>
+    <div class="heroside">
+      <div class="herocard">
+        <video src="media/hero.mp4" autoplay muted loop playsinline preload="auto" disablepictureinpicture></video>
+      </div>
+      <div class="heronote">4 个项目的实机混剪 · 25 秒 · 自动循环 · 无声</div>
+    </div>
     </div>
     <div class="stats">
       <div class="stat"><b>42<small>页</small></b><p>两份竞品系统拆解</p></div>
